@@ -250,7 +250,37 @@ footer {
   p, li, a, input, textarea { font-size: 0.85rem; }
 }
 
+/* --- Compact tables on small screens --- */
+@media (max-width: 600px) {
+  /* give the scroller a little breathing room + easier swipe */
+  .table-wrapper {
+    padding-bottom: .4rem;
+    -webkit-overflow-scrolling: touch;
+  }
 
+  /* Schedule: shrink min width, text, and padding */
+  .table.schedule {
+    min-width: 700px;          /* 375px viewport shows ~53% before scroll */
+    font-size: .78rem;         /* smaller text */
+  }
+  .table.schedule th,
+  .table.schedule td {
+    padding: .4rem .5rem;      /* tighter cells */
+  }
+
+  /* Courses table: smaller too */
+  #courses .table {
+    min-width: 420px;          /* show >80% on a 375px screen */
+    font-size: .85rem;
+  }
+  #courses .table th,
+  #courses .table td {
+    padding: .55rem .6rem;
+  }
+
+  /* Optional: headers not sticky on very small screens (less jumpiness) */
+  .table thead th { position: static; }
+}
 
 
 
