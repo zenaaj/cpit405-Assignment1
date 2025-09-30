@@ -71,7 +71,7 @@ main {
 }
 section + section { margin-top: 1.2rem; }
 
-/* Links & fragment */
+/* Links */
 a { text-decoration: none; color: var(--link); }
 a:hover { opacity: 0.85; }
 a.fragment {
@@ -93,44 +93,50 @@ a.fragment {
   border-radius: 12px;
 }
 
-/* Schedule table */
-.table.schedule {
-  width: max-content;
-  table-layout: fixed;
-  min-width: 920px;
-  font-size: .9rem;
-  border-collapse: collapse;
-}
-.table.schedule th,
-.table.schedule td {
-  white-space: nowrap;
-  padding: .55rem .6rem;
-}
-
-/* Courses table (base) */
-.table.courses {
-  width: max-content;
-  min-width: 500px;
-  font-size: .9rem;
-  border-collapse: collapse;
-}
-
 /* Generic table styling */
+.table {
+  border-collapse: collapse;
+  font-size: .9rem;
+  background: #ffffffee;
+}
 .table th, .table td {
   padding: .7rem .8rem;
   border-bottom: 1px solid #ffcde1;
-  background: #ffffffee;
 }
-.table thead th { position: sticky; top: 0; background: #f3f4f6; text-align: left; }
+.table thead th {
+  background: #f3f4f6;
+  text-align: left;
+  position: sticky; top: 0;
+}
 .table tbody tr:nth-child(odd) td { background: #fafafacc; }
 .table tbody tr:nth-child(odd):hover td { background: #cff8c5cc; }
 .table tbody tr:nth-child(even):hover td { background: #fec7e2cc; }
 
-/* Courses section heading */
-#courses h2 {
-  margin-top: 1.5rem;
-  color: var(--primary);
+/* Schedule table */
+.table.schedule {
+  width: max-content;
+  min-width: 920px;
 }
+.table.schedule th, .table.schedule td { white-space: nowrap; }
+
+/* Courses table */
+#courses h2 { margin-top: 1.5rem; color: var(--primary); }
+#courses .table {
+  width: 100%;
+  min-width: 560px;
+  border: 1px solid #ffd1e0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+#courses .table th, #courses .table td {
+  border-right: 1px solid #ffd1e0;
+}
+#courses .table tr td:last-child,
+#courses .table tr th:last-child { border-right: 0; }
+#courses .table tbody tr:nth-child(odd) td { background: #fff7fa; }
+#courses .table tbody tr:nth-child(even) td { background: #fdfdfd; }
+#courses .table tbody tr:nth-child(odd):hover td { background: #ffe4ee; }
+#courses .table tbody tr:nth-child(even):hover td { background: #f0faff; }
 
 /* Forms */
 .form-grid { display: grid; gap: .75rem; }
@@ -139,7 +145,6 @@ a.fragment {
 }
 .radio-row { display: flex; gap: 1rem; align-items: center; }
 small.hint { color: var(--muted); }
-.contact-links { margin-top: .4rem; }
 
 /* Footer */
 footer {
@@ -153,8 +158,7 @@ footer {
 
 /* Socials */
 .socials a {
-  display: inline-flex; align-items: center;
-  gap: .4rem;
+  display: inline-flex; align-items: center; gap: .4rem;
   padding: .2rem .4rem;
   border-radius: 6px;
   transition: background .2s ease, transform .1s ease;
@@ -171,116 +175,36 @@ footer {
   100% { border-color: #ef447a; }
 }
 
-/* Sidebar stays left but shrinks on tablet */
+/* Responsive: sidebar shrinks */
 @media (max-width: 900px) {
   .wrapper { grid-template-columns: 180px 1fr; }
-  .sidebar {
-    position: sticky; top: 64px;
-    padding: .75rem;
-    max-height: calc(100vh - 72px - 1rem);
-    overflow: auto;
-  }
-  .profile { gap: .4rem; }
+  .sidebar { padding: .75rem; max-height: calc(100vh - 72px - 1rem); overflow: auto; }
   .profile img { width: 96px; height: 96px; }
   .profile h2 { font-size: 1rem; }
   .profile p { font-size: .9rem; }
   .socials a img { width: 16px; height: 16px; }
-}
-
-/* Sidebar stays left but shrinks more on very small phones */
-@media (max-width: 520px) {
-  .wrapper { grid-template-columns: 140px 1fr; }
-  .profile img { width: 80px; height: 80px; }
-  .sidebar { padding: .6rem; }
-}
-
-/* ---- Courses table: scoped design & zebra rows ---- */
-#courses .table {
-  width: 100%;
-  min-width: 560px;
-  border-collapse: separate;
-  border-spacing: 0;
-  font-size: .95rem;
-  background: #fff;
-  border: 1px solid #ffd1e0;
-  border-radius: 14px;
-  overflow: hidden;
-}
-#courses .table thead th {
-  position: static;
-  background: #f3f4f6;
-  color: #0f172a;
-  font-weight: 700;
-  border-bottom: 1px solid #ffd1e0;
-}
-#courses .table th,
-#courses .table td {
-  padding: .8rem 1rem;
-  border-right: 1px solid #ffd1e0;
-}
-#courses .table tr td:last-child,
-#courses .table tr th:last-child { border-right: 0; }
-
-/* Alternating rows + distinct hover for courses table */
-#courses .table tbody tr:nth-child(odd) td { background: #fff7fa; }  /* soft pink */
-#courses .table tbody tr:nth-child(even) td { background: #fdfdfd; } /* near-white */
-#courses .table tbody tr:nth-child(odd):hover td { background: #ffe4ee; }
-#courses .table tbody tr:nth-child(even):hover td { background: #f0faff; }
-
-/* Courses table wrapper */
-#courses .table-wrapper {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 14px;
-}
-
-/* ---- Responsive font sizes ---- */
-@media (max-width: 900px) {
   body { font-size: 0.95rem; }
   h1 { font-size: 1.6rem; }
   h2 { font-size: 1.3rem; }
   h3 { font-size: 1.1rem; }
   p, li, a, input, textarea { font-size: 0.9rem; }
 }
+@media (max-width: 600px) {
+  .table.schedule { min-width: 700px; font-size: .78rem; }
+  .table.schedule th, .table.schedule td { padding: .4rem .5rem; }
+  #courses .table { min-width: 420px; font-size: .85rem; }
+  #courses .table th, #courses .table td { padding: .55rem .6rem; }
+  .table thead th { position: static; } /* avoid jumpiness */
+}
 @media (max-width: 520px) {
+  .wrapper { grid-template-columns: 140px 1fr; }
+  .sidebar { padding: .6rem; }
+  .profile img { width: 80px; height: 80px; }
   body { font-size: 0.85rem; }
   h1 { font-size: 1.3rem; }
   h2 { font-size: 1.1rem; }
   h3 { font-size: 1rem; }
   p, li, a, input, textarea { font-size: 0.85rem; }
 }
-
-/* --- Compact tables on small screens --- */
-@media (max-width: 600px) {
-  /* give the scroller a little breathing room + easier swipe */
-  .table-wrapper {
-    padding-bottom: .4rem;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Schedule: shrink min width, text, and padding */
-  .table.schedule {
-    min-width: 700px;          /* 375px viewport shows ~53% before scroll */
-    font-size: .78rem;         /* smaller text */
-  }
-  .table.schedule th,
-  .table.schedule td {
-    padding: .4rem .5rem;      /* tighter cells */
-  }
-
-  /* Courses table: smaller too */
-  #courses .table {
-    min-width: 420px;          /* show >80% on a 375px screen */
-    font-size: .85rem;
-  }
-  #courses .table th,
-  #courses .table td {
-    padding: .55rem .6rem;
-  }
-
-  /* Optional: headers not sticky on very small screens (less jumpiness) */
-  .table thead th { position: static; }
-}
-
 
 
