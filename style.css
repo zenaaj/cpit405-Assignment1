@@ -205,22 +205,40 @@ footer {
 #courses .table tr td:last-child,
 #courses .table tr th:last-child { border-right: 0; }
 
-/* Alternate row colors only for Courses I Took table */
 #courses .table tbody tr:nth-child(odd) td {
-  background: #fff7fa;   /* soft pink */
+  background: #fff7fa;   
 }
 
 #courses .table tbody tr:nth-child(even) td {
-  background: #fdfdfd;   /* light gray/white */
+  background: #fdfdfd;  
 }
 
-/* Hover effects different from schedule */
 #courses .table tbody tr:nth-child(odd):hover td {
-  background: #ffe4ee;   /* stronger pink highlight */
+  background: #ffe4ee;   
 }
 
 #courses .table tbody tr:nth-child(even):hover td {
-  background: #f0faff;   /* soft blue highlight */
+  background: #f0faff;   
+}
+
+@media (max-width: 900px) {
+  body {
+    font-size: 0.95rem;   
+  }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.1rem; }
+  p, li, a, input, textarea { font-size: 0.9rem; }
+}
+
+@media (max-width: 520px) {
+  body {
+    font-size: 0.85rem;  
+  }
+  h1 { font-size: 1.3rem; }
+  h2 { font-size: 1.1rem; }
+  h3 { font-size: 1rem; }
+  p, li, a, input, textarea { font-size: 0.85rem; }
 }
 
 
