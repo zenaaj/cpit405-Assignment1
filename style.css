@@ -1,3 +1,4 @@
+/* Global reset & base */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --primary: #9a3354;
@@ -14,6 +15,7 @@ body {
   background: url("images/bg.jpg") center/cover fixed no-repeat;
 }
 
+/* Page layout */
 .page {
   min-height: 100vh;
   display: flex; flex-direction: column;
@@ -44,6 +46,7 @@ header.sticky {
   gap: 1rem;
 }
 
+/* Sidebar */
 .sidebar {
   background: var(--card);
   padding: 1rem; border-radius: 16px; box-shadow: 0 6px 20px #00000014;
@@ -60,6 +63,7 @@ header.sticky {
 .profile h2 { font-size: 1.1rem; }
 .profile p { color: var(--muted); font-size: .95rem; }
 
+/* Main card */
 main {
   overflow: hidden;
   background: var(--card);
@@ -67,12 +71,14 @@ main {
 }
 section + section { margin-top: 1.2rem; }
 
+/* Links & fragment */
 a { text-decoration: none; color: var(--link); }
 a:hover { opacity: 0.85; }
 a.fragment {
   padding: .25rem .5rem; border: 1px dashed var(--link); border-radius: 6px; font-weight: 600;
 }
 
+/* Buttons */
 .button {
   display: inline-block; padding: .65rem 1rem; border-radius: 10px; border: 1px solid var(--primary);
   background: #fff; color: var(--primary); cursor: pointer;
@@ -80,12 +86,14 @@ a.fragment {
 }
 .button:hover { background: var(--primary); color: #fff; transform: translateY(-1px); }
 
+/* Table wrappers */
 .table-wrapper {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   border-radius: 12px;
 }
 
+/* Schedule table */
 .table.schedule {
   width: max-content;
   table-layout: fixed;
@@ -99,6 +107,7 @@ a.fragment {
   padding: .55rem .6rem;
 }
 
+/* Courses table (base) */
 .table.courses {
   width: max-content;
   min-width: 500px;
@@ -106,6 +115,7 @@ a.fragment {
   border-collapse: collapse;
 }
 
+/* Generic table styling */
 .table th, .table td {
   padding: .7rem .8rem;
   border-bottom: 1px solid #ffcde1;
@@ -116,11 +126,13 @@ a.fragment {
 .table tbody tr:nth-child(odd):hover td { background: #cff8c5cc; }
 .table tbody tr:nth-child(even):hover td { background: #fec7e2cc; }
 
+/* Courses section heading */
 #courses h2 {
   margin-top: 1.5rem;
   color: var(--primary);
 }
 
+/* Forms */
 .form-grid { display: grid; gap: .75rem; }
 .input, textarea {
   width: 100%; padding: .7rem .8rem; border-radius: 10px; border: 1px solid #d1d5db; background: #fff;
@@ -129,14 +141,17 @@ a.fragment {
 small.hint { color: var(--muted); }
 .contact-links { margin-top: .4rem; }
 
+/* Footer */
 footer {
   margin-top: 1rem; padding: 1rem; text-align: center;
   color: #111827; background: #ffffffcc; border-top: 1px solid #e5e7eb;
 }
 
+/* About pseudo-elements */
 .about p::first-letter { font-size: 2rem; font-weight: 800; color: var(--primary); }
 .about h3::before { content: "• "; color: var(--primary); font-weight: 900; }
 
+/* Socials */
 .socials a {
   display: inline-flex; align-items: center;
   gap: .4rem;
@@ -144,11 +159,10 @@ footer {
   border-radius: 6px;
   transition: background .2s ease, transform .1s ease;
 }
-.socials a img {
-  width: 18px; height: 18px;
-}
+.socials a img { width: 18px; height: 18px; }
 .socials a:hover { background: #eef2ff; transform: translateY(-1px); }
 
+/* Profile border animation */
 @keyframes borderColorChange {
   0% { border-color: #ef447a; }
   25% { border-color: #ff9cc5; }
@@ -157,6 +171,7 @@ footer {
   100% { border-color: #ef447a; }
 }
 
+/* Sidebar stays left but shrinks on tablet */
 @media (max-width: 900px) {
   .wrapper { grid-template-columns: 180px 1fr; }
   .sidebar {
@@ -171,24 +186,26 @@ footer {
   .profile p { font-size: .9rem; }
   .socials a img { width: 16px; height: 16px; }
 }
+
+/* Sidebar stays left but shrinks more on very small phones */
 @media (max-width: 520px) {
   .wrapper { grid-template-columns: 140px 1fr; }
   .profile img { width: 80px; height: 80px; }
   .sidebar { padding: .6rem; }
 }
 
+/* ---- Courses table: scoped design & zebra rows ---- */
 #courses .table {
   width: 100%;
-  min-width: 560px;                
-  border-collapse: separate;       
+  min-width: 560px;
+  border-collapse: separate;
   border-spacing: 0;
   font-size: .95rem;
   background: #fff;
-  border: 1px solid #ffd1e0;      
-  border-radius: 14px;             
-  overflow: hidden;               
+  border: 1px solid #ffd1e0;
+  border-radius: 14px;
+  overflow: hidden;
 }
-
 #courses .table thead th {
   position: static;
   background: #f3f4f6;
@@ -196,7 +213,6 @@ footer {
   font-weight: 700;
   border-bottom: 1px solid #ffd1e0;
 }
-
 #courses .table th,
 #courses .table td {
   padding: .8rem 1rem;
@@ -205,41 +221,35 @@ footer {
 #courses .table tr td:last-child,
 #courses .table tr th:last-child { border-right: 0; }
 
-#courses .table tbody tr:nth-child(odd) td {
-  background: #fff7fa;   
+/* Alternating rows + distinct hover for courses table */
+#courses .table tbody tr:nth-child(odd) td { background: #fff7fa; }  /* soft pink */
+#courses .table tbody tr:nth-child(even) td { background: #fdfdfd; } /* near-white */
+#courses .table tbody tr:nth-child(odd):hover td { background: #ffe4ee; }
+#courses .table tbody tr:nth-child(even):hover td { background: #f0faff; }
+
+/* Courses table wrapper */
+#courses .table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 14px;
 }
 
-#courses .table tbody tr:nth-child(even) td {
-  background: #fdfdfd;  
-}
-
-#courses .table tbody tr:nth-child(odd):hover td {
-  background: #ffe4ee;   
-}
-
-#courses .table tbody tr:nth-child(even):hover td {
-  background: #f0faff;   
-}
-
+/* ---- Responsive font sizes ---- */
 @media (max-width: 900px) {
-  body {
-    font-size: 0.95rem;   
-  }
+  body { font-size: 0.95rem; }
   h1 { font-size: 1.6rem; }
   h2 { font-size: 1.3rem; }
   h3 { font-size: 1.1rem; }
   p, li, a, input, textarea { font-size: 0.9rem; }
 }
-
 @media (max-width: 520px) {
-  body {
-    font-size: 0.85rem;  
-  }
+  body { font-size: 0.85rem; }
   h1 { font-size: 1.3rem; }
   h2 { font-size: 1.1rem; }
   h3 { font-size: 1rem; }
   p, li, a, input, textarea { font-size: 0.85rem; }
 }
+
 
 
 
