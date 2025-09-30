@@ -190,21 +190,21 @@ footer {
   p, li, a, input, textarea { font-size: 0.9rem; }
 }
 @media (max-width: 600px) {
-  .table.schedule { min-width: 700px; font-size: .40rem; }
+  .table.schedule { min-width: 700px; font-size: .20rem; }
   .table.schedule th, .table.schedule td { padding: .2rem .3rem; }
-  #courses .table { min-width: 420px; font-size: .45rem; }
-  #courses .table th, #courses .table td { padding: .35rem .4rem; }
+  #courses .table { min-width: 420px; font-size: .25rem; }
+  #courses .table th, #courses .table td { padding: .20rem .2rem; }
   .table thead th { position: static; } /* avoid jumpiness */
 }
 @media (max-width: 520px) {
   .wrapper { grid-template-columns: 140px 1fr; }
-  .sidebar { padding: .6rem; }
+  .sidebar { padding: .3rem; }
   .profile img { width: 80px; height: 80px; }
-  body { font-size: 0.40rem; }
-  h1 { font-size: 1rem; }
-  h2 { font-size: 0.9rem; }
-  h3 { font-size: 0.6rem; }
-  p, li, a, input, textarea { font-size: 0.85rem; }
+  body { font-size: 0.30rem; }
+  h1 { font-size: 0.9rem; }
+  h2 { font-size: 0.6rem; }
+  h3 { font-size: 0.3rem; }
+  p, li, a, input, textarea { font-size: 0.2rem; }
 }
 
 
