@@ -204,7 +204,7 @@ footer {
   h1 { font-size: 0.9rem; }
   h2 { font-size: 0.6rem; }
   h3 { font-size: 0.3rem; }
-  p, li, a, input, textarea { font-size: 6rem; }
+  p, li, a, input, textarea { font-size: 0.6rem; }
 }
 
 
