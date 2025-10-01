@@ -207,5 +207,10 @@ footer {
   p, li, a, input, textarea { font-size: 0.7rem; }
 }
 
+@media (max-width: 520px) {
+  .contact-page form.form-grid > label,
+  .contact-page form.form-grid fieldset > legend { font-size: 1.05rem; }
+}
+
 
 
