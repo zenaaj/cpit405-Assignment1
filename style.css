@@ -187,7 +187,7 @@ footer {
   h1 { font-size: 1.1rem; }
   h2 { font-size: 1rem; }
   h3 { font-size: 0.9rem; }
-  p, li, a, input, textarea { font-size: 0.8rem; }
+  p, li, a, input, textarea, label { font-size: 0.8rem; }
 }
 @media (max-width: 600px) {
   .table.schedule { min-width: 700px; font-size: .20rem; }
