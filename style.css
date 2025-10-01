@@ -212,5 +212,27 @@ footer {
   .contact-page form.form-grid fieldset > legend { font-size: 0.9rem; }
 }
 
+@media (max-width: 768px) {
+  .table.schedule {
+    min-width: 600px;       
+    font-size: 0.75rem;     
+  }
+  .table.schedule th,
+  .table.schedule td {
+    padding: 0.35rem 0.45rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .table.schedule {
+    min-width: 500px;       
+    font-size: 0.7rem;
+  }
+  .table.schedule th,
+  .table.schedule td {
+    padding: 0.25rem 0.35rem;
+  }
+}
+
 
 
