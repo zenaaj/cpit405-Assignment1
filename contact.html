@@ -6,7 +6,7 @@
   <title>Contact Me</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="page">
+<body class="page contact-page">
   <header class="sticky">
     <nav class="navbar">
       <a class="brand" href="index.html">Zena Aljared</a>
@@ -43,76 +43,73 @@
       <p class="muted">Fill the form and I’ll get back to you!</p>
 
       <form
-  class="form-grid"
-  method="post"
-  action="https://webhook.site/https://webhook.site/35117ee6-9baf-4111-abf0-8e391453b163"
-  autocomplete="on"
->
-  <label for="name">
-    Name <span class="hint">(required)</span>
-  </label>
-  <input
-    class="input"
-    id="name"
-    name="name"
-    type="text"
-    placeholder="Your full name"
-    required
-    minlength="2"
-    maxlength="80"
-    autocomplete="name"
-  />
+        class="form-grid"
+        method="post"
+        action="https://webhook.site/35117ee6-9baf-4111-abf0-8e391453b163"
+        autocomplete="on"
+      >
+        <label for="name">
+          Name <span class="hint">(required)</span>
+        </label>
+        <input
+          class="input"
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Your full name"
+          required
+          minlength="2"
+          maxlength="80"
+          autocomplete="name"
+        />
 
-  <label for="email">
-    Email <span class="hint">(optional)</span>
-  </label>
-  <input
-    class="input"
-    id="email"
-    name="email"
-    type="email"
-    placeholder="you@example.com"
-    maxlength="120"
-    autocomplete="email"
-  />
+        <label for="email">
+          Email <span class="hint">(optional)</span>
+        </label>
+        <input
+          class="input"
+          id="email"
+          name="email"
+          type="email"
+          placeholder="you@example.com"
+          maxlength="120"
+          autocomplete="email"
+        />
 
-  <fieldset style="border:none; padding:0; margin:0;">
-    <legend>Message Type <span class="hint">(required)</span></legend>
-    <div class="radio-row">
-      <label>
-        <input type="radio" name="type" value="Inquiry" required />
-        Inquiry
-      </label>
-      <label>
-        <input type="radio" name="type" value="Complaint" />
-        Complaint
-      </label>
-    </div>
-  </fieldset>
+        <fieldset style="border:none; padding:0; margin:0;">
+          <legend>Message Type <span class="hint">(required)</span></legend>
+          <div class="radio-row">
+            <label>
+              <input type="radio" name="type" value="Inquiry" required />
+              Inquiry
+            </label>
+            <label>
+              <input type="radio" name="type" value="Complaint" />
+              Complaint
+            </label>
+          </div>
+        </fieldset>
 
-  <label for="message">
-    Message <span class="hint">(required)</span>
-  </label>
-  <textarea
-    class="input"
-    id="message"
-    name="message"
-    rows="8"
-    placeholder="Write your message here..."
-    required
-    minlength="10"
-    maxlength="2000"
-  ></textarea>
+        <label for="message">
+          Message <span class="hint">(required)</span>
+        </label>
+        <textarea
+          class="input"
+          id="message"
+          name="message"
+          rows="8"
+          placeholder="Write your message here..."
+          required
+          minlength="10"
+          maxlength="2000"
+        ></textarea>
 
-  <button class="button" type="submit">Submit</button>
-  <small class="hint">By submitting, you consent to being contacted about your inquiry.</small>
-</form>
-
+        <button class="button" type="submit">Submit</button>
+        <small class="hint">By submitting, you consent to being contacted about your inquiry.</small>
+      </form>
     </main>
   </div>
 
   <footer>© 2025 ZJ</footer>
 </body>
 </html>
-
-
