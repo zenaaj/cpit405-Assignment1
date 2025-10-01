@@ -469,3 +469,24 @@ footer {
 }
 
 
+/* --- Fix: make "Courses I Took" horizontally scrollable on phones --- */
+#courses .table-wrapper {
+  overflow-x: auto;               /* enable horizontal scroll */
+  -webkit-overflow-scrolling: touch;
+  position: relative;             /* improves iOS finger hitbox */
+}
+
+@media (max-width: 600px) {
+  /* Make the inner table wider than the viewport so scrolling is needed */
+  #courses .table {
+    width: max-content;           /* size to content, not container */
+    min-width: 720px;             /* force overflow on ~375–430px screens */
+  }
+  /* Keep each cell on one line so width doesn't collapse */
+  #courses .table th,
+  #courses .table td {
+    white-space: nowrap;
+    padding: .65rem .8rem;
+  }
+}
+
