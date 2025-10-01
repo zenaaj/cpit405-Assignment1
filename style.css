@@ -493,7 +493,7 @@ footer {
 /* Make "By submitting..." text bigger on mobile */
 @media (max-width: 600px) {
   form small.hint {
-    font-size: 0.95rem;   /* adjust until it feels right */
+    font-size: 4rem;   /* adjust until it feels right */
     display: block;       /* ensures it spans full width */
     margin-top: 0.5rem;   /* spacing so it doesn’t stick to the button */
     color: var(--muted);  /* keep consistent muted style */
