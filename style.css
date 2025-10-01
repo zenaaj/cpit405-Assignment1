@@ -235,4 +235,63 @@ footer {
 }
 
 
+/* === MOBILE REFINEMENTS (paste at end) ============================== */
+
+/* 1) Schedule table: compact but readable on phones */
+@media (max-width: 600px) {
+  /* Give the scroller some finger room */
+  .table-wrapper { padding-bottom: .5rem; -webkit-overflow-scrolling: touch; }
+
+  /* Show ~60% of the table before scroll. Bigger text than before. */
+  .table.schedule {
+    min-width: 580px;         /* was 920+; do NOT go smaller or text wraps awkwardly */
+    font-size: 0.86rem;       /* readable on iPhone */
+  }
+  .table.schedule th,
+  .table.schedule td {
+    padding: .55rem .6rem;    /* comfy, not huge */
+    white-space: nowrap;      /* keep time/course on one line */
+  }
+
+  /* If your schedule has many columns, you can hide low-priority ones:
+     Example hides columns 3+ (keep Time + first data column). 
+     Comment these out if you want all columns visible. */
+  /*
+  .table.schedule thead th:nth-child(n+3),
+  .table.schedule tbody td:nth-child(n+3) { display: none; }
+  */
+}
+
+/* 2) "Courses I Took" table: fill width & use normal text on phones */
+@media (max-width: 600px) {
+  #courses .table-wrapper { overflow-x: visible; }   /* no horizontal scroll needed here */
+  #courses .table {
+    min-width: 0;            /* let it shrink to container */
+    width: 100%;
+    font-size: 0.95rem;      /* bigger than before so it's readable */
+  }
+  #courses .table th,
+  #courses .table td {
+    padding: .65rem .8rem;   /* restore comfortable padding */
+    border-right: 0;         /* remove inner vertical borders to avoid cramped look */
+  }
+}
+
+/* 3) Small heading/body adjustments so cards don’t look oversized */
+@media (max-width: 600px) {
+  main { padding: 1rem; }
+  h1 { font-size: 1.35rem; }
+  #courses h2 { font-size: 1.15rem; }
+}
+
+/* 4) Ultra-small screens: a touch more compaction for schedule only */
+@media (max-width: 480px) {
+  .table.schedule {
+    min-width: 540px;        /* keeps ~50% visible on a 375px viewport */
+    font-size: 0.84rem;
+  }
+  .table.schedule th,
+  .table.schedule td { padding: .5rem .55rem; }
+}
+
 
